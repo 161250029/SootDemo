@@ -1,0 +1,56 @@
+public class TestMain extends java.lang.Object
+{
+
+    public void <init>()
+    {
+        TestMain r0;
+
+        r0 := @this: TestMain;
+        specialinvoke r0.<java.lang.Object: void <init>()>();
+        return;
+    }
+
+    public static void main(java.lang.String[])
+    {
+        java.lang.String[] r0;
+
+        r0 := @parameter0: java.lang.String[];
+        staticinvoke <TestMain: void C(int)>(1);
+        return;
+    }
+
+    public static void A()
+    {
+        java.io.PrintStream $r0;
+
+        $r0 = <java.lang.System: java.io.PrintStream out>;
+        virtualinvoke $r0.<java.io.PrintStream: void println(java.lang.String)>("inside A");
+        return;
+    }
+
+    public static void B()
+    {
+        java.io.PrintStream $r0;
+
+        $r0 = <java.lang.System: java.io.PrintStream out>;
+        virtualinvoke $r0.<java.io.PrintStream: void println(java.lang.String)>("inside B");
+        return;
+    }
+
+    public static void C(int)
+    {
+        int i0;
+
+        i0 := @parameter0: int;
+        if i0 <= 1 goto label0;
+
+        staticinvoke <TestMain: void A()>();
+        goto label1;
+
+     label0:
+        staticinvoke <TestMain: void B()>();
+
+     label1:
+        return;
+    }
+}
